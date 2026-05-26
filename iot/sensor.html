@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensor Data - Grihanirman Technologies</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true"><span>G</span></div>
+      <div>
+        <p class="brand-title">Grihanirman</p>
+        <p class="brand-subtitle">Innovating IoT, STEM & Firmware</p>
+      </div>
+    </div>
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <nav class="navbar" id="siteNav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="sensor.html" class="nav-link active">Sensor Data</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-small">
+      <div class="hero-copy">
+        <p class="eyebrow">Sensor Data</p>
+        <h1>Real-time insights with charts and live readings.</h1>
+        <p>Monitor ten sensor streams with gauges, sparklines, and an overview bar chart. Connect your hardware API later to replace demo data.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="dashboard-toolbar">
+        <p>Last updated: <time id="lastUpdated">—</time></p>
+        <div class="dashboard-actions">
+          <label class="live-toggle">
+            <input type="checkbox" id="liveToggle" checked />
+            Live updates
+          </label>
+          <button type="button" class="button secondary" id="refreshBtn">Refresh now</button>
+        </div>
+      </div>
+
+      <div class="chart-panel">
+        <h2>Overview</h2>
+        <p>Relative level across all sensors (% of configured range)</p>
+        <div class="chart-wrap">
+          <canvas id="sensorOverviewChart" role="img" aria-label="Bar chart of all sensor levels"></canvas>
+        </div>
+      </div>
+
+      <div class="sensor-grid" id="sensorGrid" aria-live="polite" aria-busy="true">
+        <!-- Cards rendered by script.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer small-footer">
+    <div>
+      <h3>Sensor management made simple</h3>
+      <p>Replace demo values in script.js with your MQTT or REST endpoint when ready.</p>
+    </div>
+    <a class="button primary" href="contact.html">Integrate your devices</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
